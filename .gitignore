@@ -1,0 +1,6 @@
+*.o
+*.g
+*.lua
+*.zst
+g_unpack
+g_unpack.exe
