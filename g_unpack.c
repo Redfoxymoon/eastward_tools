@@ -6,6 +6,10 @@
 
 #include "readbytes.h"
 
+#ifdef _WIN32
+#define mkdir(path, mode) mkdir(path)
+#endif
+
 /* header: */
 /* 0x37 0x6a 0x00 0x00 */
 /* 32-bit int: number of files */
@@ -124,11 +128,3 @@ int main(int argc, char **argv)
 
 	return 0;
 }
-
-#ifdef _WIN32
-static int mkdir(const char *path, int mode)
-{
-	(void)mode;
-	mkdir(path);
-}
-#endif
